@@ -73,9 +73,15 @@ function handle_company_stock_candle_response(result){
 
 function handle_company_stock_candle_error(result){
     console.log(result.response)
-    return {
-        "error": result.response.data
+    if (result.response){
+        return {
+            "error": result.response.data
+        }
     }
+    return {
+        "error": "Unknown Error."
+    }
+    
 }
 
 function get_company_latest_price(company) {
