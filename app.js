@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const body_parser = require("body-parser");
+const path = require("path");
 
 const morgan_body = require("morgan-body");
 
@@ -26,8 +27,14 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.static(path.join(__dirname, "stock_paper_trading_frontend")));
+
 app.use("/test", test_routes);
 app.use("/api/finnhub", finnhub_routes);
+
+app.use("/*", function(req, res){
+    res.sendFile(path.join(__dirname + "/stock_paper_trading_frontend/index.html"));
+})
 
 // things like 404 error
 app.use((req, res, next) => {
