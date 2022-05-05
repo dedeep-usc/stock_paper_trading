@@ -132,12 +132,12 @@ function handle_company_news_response(result){
     // console.log(result.data);
     result = result.data;
 
-    if (Object.keys(result).length === 0) {
-        console.log("The len of the returned data is 0.");
-        return {
-            "error": "Finnhub didn't return any data."
-        }
-    }
+    // if (Object.keys(result).length === 0) {
+    //     console.log("The len of the returned data is 0.");
+    //     return {
+    //         "error": "Finnhub didn't return any data."
+    //     }
+    // }
 
     return result
 }
@@ -228,12 +228,12 @@ function handle_company_peers_response(result){
     console.log(result.data);
     result = result.data;
 
-    if (Object.keys(result).length === 0) {
-        console.log("The len of the returned data is 0.");
-        return {
-            "error": "Finnhub didn't return any data."
-        }
-    }
+    // if (Object.keys(result).length === 0) {
+    //     console.log("The len of the returned data is 0.");
+    //     return {
+    //         "error": "Finnhub didn't return any data."
+    //     }
+    // }
 
     return result
 }
